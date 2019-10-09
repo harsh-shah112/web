@@ -1,0 +1,22 @@
+<mvt:item name="toolkit" param="sassign|subject|Contact Us Form" />
+<mvt:item name="toolkit" param="sassign|to_email|sales@guaranteedparts.com" />
+<mvt:if expr="(g.to_email CIN 'sales@guaranteedparts.com') EQ 0">
+<mvt:item name="toolkit" param="sassign|kill_email|Unauthorized email" />
+</mvt:if>
+<mvt:if expr="(g.verifyA LT 3) OR (g.verifyB LT 3)">
+<mvt:item name="toolkit" param="sassign|kill_email|math error" />
+</mvt:if>
+<mvt:if expr="(g.verifyA + g.verifyB) EQ g.verifyC">
+<mvt:else>
+<mvt:item name="toolkit" param="sassign|kill_email|check your math" />
+</mvt:if>
+Name: &mvt:global:name;<br />
+Email: &mvt:global:from_email;<br />
+Country: &mvt:global:country;<br />
+Brand: &mvt:global:brand;<br />
+Model: &mvt:global:model;<br />
+Serial Number: &mvt:global:snumber;<br />
+Phone: &mvt:global:phone;<br />
+Question: &mvt:global:question;<br />
+<mvt:item name="toolkit" param="sassign|msg|1" />
+<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"2fd6822b24b361fa5fdabbe10","lid":"f5a40b5481","uniqueMethods":true}) })</script>
